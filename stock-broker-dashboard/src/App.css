@@ -1,0 +1,11 @@
+.app {
+  text-align: center;
+}
+
+nav {
+  margin: 10px;
+}
+
+nav button, nav a {
+  margin-right: 10px;
+}

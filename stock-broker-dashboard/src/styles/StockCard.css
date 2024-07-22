@@ -1,0 +1,48 @@
+.stock-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h4 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 20px;
+}
+
+.subscribe-section {
+  margin-bottom: 20px;
+}
+
+.subscribe-section button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.subscribe-section button:hover {
+  background-color: #0056b3;
+}
+
+.stocks-section {
+  margin-top: 20px;
+}
+
+.stock-info {
+  background-color: #e9ecef;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+  text-align: left;
+}

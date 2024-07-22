@@ -1,0 +1,13 @@
+.stock-list {
+    text-align: center;
+  }
+  
+  .stock-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .stock-list li {
+    margin: 10px 0;
+  }
+  
