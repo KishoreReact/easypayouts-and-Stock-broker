@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import io from 'socket.io-client';
 import StockCard from './StockCard';
 import '../styles/Dashboard.css';
+
+const socket = io('http://localhost:4000'); 
 
 const Dashboard = ({ user1, user2, onLogout }) => {
   const [stocks, setStocks] = useState({
@@ -12,17 +15,17 @@ const Dashboard = ({ user1, user2, onLogout }) => {
   });
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setStocks((prevStocks) => ({
-        ...prevStocks,
-        GOOG: (Math.random() * 1000).toFixed(2),
-        TSLA: (Math.random() * 1000).toFixed(2),
-        AMZN: (Math.random() * 1000).toFixed(2),
-        META: (Math.random() * 1000).toFixed(2),
-        NVDA: (Math.random() * 1000).toFixed(2),
-      }));
-    }, 1000);
-    return () => clearInterval(interval);
+    socket.on('connect', () => {
+      console.log('Connected to server');
+    });
+
+    socket.on('stockUpdate', (updatedStocks) => {
+      setStocks(updatedStocks);
+    });
+
+    return () => {
+      socket.off('stockUpdate');
+    };
   }, []);
 
   return (
